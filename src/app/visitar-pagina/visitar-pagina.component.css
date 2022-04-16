@@ -1,0 +1,69 @@
+
+
+.pop{
+    background: rgb(165, 249, 249);
+    width: 400px;
+    position: absolute;
+    margin-top: 200px;
+    margin-left: 20%;
+    padding:10px;
+    display:block;
+    border: black 2px solid;
+    border-radius: 20px;
+}
+.navegador{
+    float: left;
+}
+
+.contenedor{
+    background:rgb(165, 249, 249);
+    display:flex;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 5%;
+    margin-bottom: 20px;
+    width: 150px;
+    height: 150px;
+    border-radius: 5rem;
+    float:left;
+}
+
+.Contenedor2{
+    margin-left:auto;
+    margin-right: auto;
+    float:left;
+}
+
+.a{
+    margin:10px;
+    padding: 0px 20px;
+    background-color: rgb(199, 228, 254);
+    border-radius: 20px;
+}
+
+.b{
+    padding: 10px;
+}
+
+.c{
+    float:right;
+}
+
+.d{
+    width: 100%;
+    border-color: black;
+}
+
+.col{
+    max-width:300px;
+}
+
+.cerrar{
+    padding-top: 5px;
+    padding-left: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border-radius: 10px;
+}

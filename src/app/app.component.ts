@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Sistemas_Interactivo';
+
+
+  constructor(private router: Router) { }
+
+  goToPag(id:number){
+    this.router.navigate(['EMat',id])
+  }
 }

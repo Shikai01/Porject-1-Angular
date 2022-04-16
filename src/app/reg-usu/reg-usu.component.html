@@ -1,0 +1,57 @@
+
+    <div class="row mt-4">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="titulo1">Unete
+                    <div *ngIf="loading" class="spinner-border float-end" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </h2>
+
+                <form class="formulario1" [formGroup]="form" (ngSubmit)="crearUsu()">
+                    <div class="row mt-4">
+                        <div class="input-group input-group-lg mb3">
+                            <span class="input-group-text"> <p class="spam1">Universidad</p></span>
+                            <input type="text" class="form-control" formControlName="universidad" placeholder="Rey Juan Carlos/UC3M/UCM/UPM" (focusout)="ActualizarCheckBox()" required>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="input-group input-group-lg mb3" *ngIf="mostrarC">
+
+                            <span class="input-group-text"> <p class="spam1">Carrera</p></span>
+                            <input type="text" class="form-control" formControlName="carrera" placeholder="escriba una de las opciones de abajo" required>
+                        </div>
+                    </div>
+
+                    <ul class="list-group" *ngFor="let item of listaCarreras">
+                        <li class="extra">{{item}}</li>
+                    </ul>
+                    <div class="row mt-4">
+                        <div class="input-group input-group-lg mb3">
+                            <span class="input-group-text"><p class="spam1">Correo-electronico</p></span>
+                            <input type="email" class="form-control" formControlName="Correo" placeholder="Correo" required>
+                        </div>
+
+                    </div>
+                    <div class="row mt-4">
+                        <div class="input-group input-group-lg mb3">
+                            <span class="input-group-text"><p class="spam1">Nombre usuario</p></span> 
+                            <input type="text" class="form-control" formControlName="Nombre" placeholder="Nombre de usuario" required>
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-4">
+                        <div class="input-group input-group-lg mb3">
+                            <span class="input-group-text"> <p class="spam1">Contraseña</p></span>
+                            <input type="password" class="form-control" formControlName="contraseña" placeholder="Contraseña" required>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <button class="btn btn-success btn-lg" type="submit">Registrarse</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+   
+

@@ -1,0 +1,122 @@
+
+<div class="row">
+    <div class="col">
+        <div class="row">
+            <app-bienvenido></app-bienvenido>
+        </div>
+    
+        <div class="row">
+            <div class="navegador">
+                <app-navegador></app-navegador>
+            </div>
+        </div>
+    
+    </div>
+    <div class="col-lg-10">
+            <div class="row mt-2">
+                <div class="card">
+                    <div class="card-body">
+                        <h1>{{mat}}</h1>
+                        <hr>
+                        <h3>{{carr}} ({{uni}})   {{puntuacion}}/10</h3>
+                    </div>
+                </div>
+            </div>
+    
+    
+            <div class="row mt-2">
+                <div class="card">
+                    <div class="card-body">
+                        <h1>Profesores</h1>
+                        <hr>
+                        <div *ngFor="let item of listaProf">
+                            <div class="a" (click)="IrProf(item)" type="button">
+                                <p>{{item}}</p>
+                            </div>
+                        </div>
+                        <div class="input-group input-group-lg mb3">
+                            <button class="btn btn-success btn-lg" (click)="activarForm()">Agregar Profesor</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div *ngIf="m_pop2" class="pop">
+                <form class="formulario1" [formGroup]="form" (ngSubmit)="crearProf()">
+                    <div class="row mt-2">
+                        <div class="input-group input-group-lg mb3">
+                            <span class="input-group-text"><p class="spam1">Nombre del Profesor</p></span>
+                            <input type="text" class="form-control" formControlName="nombreP" placeholder="Nombre">
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="input-group input-group-lg mb3">
+                            <button class="btn btn-success btn-lg" type="submit">Agregar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+    
+    
+            <div class="row mt-2">
+                <div class="card">
+                    <div class="card-body">
+                        <h1>Seccion de comentarios</h1>
+                        <hr>
+                        <div *ngFor="let item of listaComentarios; let i= index" class="a">
+                            <div class="b">
+                                <div class="d">
+                                    <p class="c">{{listaPuntuacionComentarios[i]}}/10</p>
+                                    <p>{{listaNombresComentarios[i]}}</p>  
+                                </div>
+                                <hr>
+                                <p>{{listaComentarios[i]}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+    
+            <div class="row mt-2">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="titulo1">Comentario
+                            <div *ngIf="loading" class="spinner-border float-end" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                              </div>
+                        </h2>
+                        <hr>
+        
+                        <form class="formulario1" [formGroup]="form" (ngSubmit)="crearComent()">
+        
+                            <div class="row mt-2">
+                                <div class="input-group input-group-lg mb3">
+                                    <span class="input-group-text"><p class="spam1">puntuacion</p></span>
+                                    <input type="number" class="form-control" formControlName="puntuacion" placeholder="Inserte un numero del 1 al 10" min="0" max="10">
+                                </div>
+                            </div>
+        
+                            <div class="row mt-2">
+                                <div class="input-group input-group-lg mb3">
+                                    <span class="input-group-text"><p class="spam1">comentario</p></span>
+                                    <input type="text" class="form-control" formControlName="comentarios">
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="row mt-2">
+                                <button class="btn btn-success btn-lg" type="submit">Subir comentario</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+
+   
+
+
+

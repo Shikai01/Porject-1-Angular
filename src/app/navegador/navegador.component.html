@@ -1,0 +1,7 @@
+<ul class="list-group" *ngFor="let item of listaUniversidades">
+    <a class="list-group-item list-group-item-action active">
+        {{item}}
+      </a>
+    <a href="Pag/{{item}}/{{item2.stringValue}}" id="escondido" class="list-group-item list-group-item-action" *ngFor="let item2 of cosa[item].arrayValue.values">{{item2.stringValue}}</a>
+</ul>
+

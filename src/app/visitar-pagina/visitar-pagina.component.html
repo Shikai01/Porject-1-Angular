@@ -1,0 +1,126 @@
+<div class="row">
+    <div class="col">
+        <div class="row">
+            <app-bienvenido></app-bienvenido>
+        </div>
+    
+        <div class="row">
+            <div class="navegador">
+                <app-navegador></app-navegador>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-lg-10" *ngIf="m_nuevo">
+        <div class="row mt-2">
+            <div class="card">
+                <div class="card-body">
+                    <h1>Empieza eligiendo una materia</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-10" *ngIf="m_nuevon">
+        <div class="row mt-2">
+            <div class="card">
+                <div class="card-body">
+                    <h1>{{carr}}({{uni}})</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2"> 
+            <div class="card">
+                <div class="card-body">
+
+                    <h2>Materias</h2>
+                    <hr>
+                    <div class="contenedor" *ngFor="let item of listaMaterias">
+                        <div class="Contenedor2">
+                            <a role="button" (click)="ComentarMat(item)">
+                            {{item}}
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contenedor">
+                        <div class="Contenedor2">
+                            <a (click)="activarpop()" role="button" >Agregar Materia</a>
+                            </div>
+                        </div>
+
+                        <div *ngIf="m_pop" class="pop">
+                        <p (click)="cerrarpop()" type="button" class="cerrar">X</p>
+                        <form class="formulario1" [formGroup]="form" (ngSubmit)="crearMat()">
+                            <div class="row mt-4">
+                                <div class="input-group input-group-lg mb3">
+                                    <span class="input-group-text"><p class="spam1">Nombre del Profesor</p></span>
+                                    <input type="text" class="form-control" formControlName="nombreM" placeholder="Hola">
+                                </div>
+                                <div class="input-group input-group-lg mb3">
+                                    <span class="input-group-text"><p class="spam1">Nombre de la materia</p></span>
+                                    <input type="text" class="form-control" formControlName="materiaM" placeholder="Hola">
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                <div class="input-group input-group-lg mb3">
+                                <button class="btn btn-success btn-lg" type="submit">Registrarse</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+
+
+
+
+        <div class="row mt-2"> 
+            <h2>Profesores</h2>
+            <hr>
+        <div class="contenedor" *ngFor="let item of listaProf">
+            <div class="Contenedor2">
+                <a role="button" (click)="ComentarProf(item)">
+                    {{item}}
+                </a>
+            </div>
+        </div>
+        <div class="contenedor">
+            <div class="Contenedor2">
+                <a (click)="activarpop2()" role="button" >Agregar Profesor</a>
+            </div>
+        </div>
+       
+        <div *ngIf="m_pop2" class="pop">
+            <p (click)="cerrarpop2()" type="button" class="cerrar">X</p>
+            <form class="formulario1" [formGroup]="form" (ngSubmit)="crearProf()">
+                <div class="row mt-4">
+                    <div class="input-group input-group-lg mb3">
+                        <span class="input-group-text"><p class="spam1">Nombre del Profesor</p></span>
+                        <input type="text" class="form-control" formControlName="nombreP" placeholder="Nombre Materia">
+                    </div>
+                    <div class="input-group input-group-lg mb3">
+                        <span class="input-group-text"><p class="spam1">Nombre de la materia</p></span>
+                        <input type="text" class="form-control" formControlName="materiaP" placeholder="Nombre Profesor">
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="input-group input-group-lg mb3">
+                        <button class="btn btn-success btn-lg" type="submit">Registrarse</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        </div>       
+    </div>
+</div>
+
+
+
+
+
+
+                </div>
+            </div>
+    
+        

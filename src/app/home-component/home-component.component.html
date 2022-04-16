@@ -1,0 +1,68 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="titulo1">Bienbenido</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        
+        <div class="col-lg-6">
+            <app-reg-usu>
+            </app-reg-usu>
+        </div>
+        <div class="col-lg-6">
+
+            <div class="row mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="titulo1">¿Ya tienes una cuenta?</h2>
+                        <form class="formulario1" [formGroup]="form" (ngSubmit)="checkUsu()">
+                            <div class="row mt-4">
+                                <div class="input-group input-group-lg mb3">
+        
+                                    <span class="input-group-text"> <p class="spam1">Correo-electronico</p></span>
+                                    <input type="email" class="form-control" formControlName="correo" placeholder="Escriba su Correo">
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                <div class="input-group input-group-lg mb3">
+        
+                                    <span class="input-group-text"> <p class="spam1">Contraseña</p></span>
+                                    <input type="password" class="form-control" formControlName="contraseña" placeholder="Escriba su contraseña">
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                <button class="btn btn-success btn-lg" type="submit">Iniciar sesion</button>
+                            </div>
+                        </form>
+                        
+                    </div>
+                    
+                </div>
+
+            </div>
+            
+            <div class="row mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <h2 class="titulo1">Explorar el modo sin iniciar sesion</h2>
+                            <p class="titulo1">Algunas funciones estaran restringidas</p>
+                            <button class="btn btn-success btn-lg" (click)="viajarSinRegistrarse()">Seguir sin registrarse</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+</div>
+
+
+
