@@ -5,8 +5,7 @@ import { AngularFirestore } from "@angular/fire/compat/firestore";
 
 @Component({
   selector: 'app-visitar-pagina',
-  templateUrl: './visitar-pagina.component.html',
-  styleUrls: ['./visitar-pagina.component.css']
+  templateUrl: './visitar-pagina.component.html'
 })
 export class VisitarPaginaComponent implements OnInit {
   m_pop = false;
