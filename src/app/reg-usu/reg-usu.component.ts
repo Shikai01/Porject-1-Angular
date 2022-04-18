@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder,FormControl,FormGroup } from '@angular/forms';
+import { FormBuilder,FormGroup } from '@angular/forms';
 import { Usuario } from '../models/Usuario';
 import { RegUsuario } from '../Servicio_Usuario/Reg_Usuario';
 import { Router} from '@angular/router';
@@ -24,7 +24,7 @@ export class RegUsuComponent implements OnInit {
   constructor(private router: Router, private fb: FormBuilder,
               private _Usuario: RegUsuario,private firebase: AngularFirestore, private Cookie: CookieService) {
     this.form=this.fb.group({
-      Correo: [''],
+      correo: [''],
       Nombre: [''],
       contraseña: [''],
       universidad: [''],
@@ -52,7 +52,7 @@ export class RegUsuComponent implements OnInit {
         const Usu: Usuario={
           nombre: this.form.value.Nombre,
           contraseña: this.form.value.contraseña,
-          correo: this.form.value.Correo,
+          correo: this.form.value.correo,
           universidad: this.form.value.universidad,
           carrera: this.form.value.carrera
         };
@@ -62,7 +62,7 @@ export class RegUsuComponent implements OnInit {
           this.loading=false;
           console.log("todo correcto");
           this.form.reset();
-          this.Cookie.set('loggeado',this.form.value.Correo);
+          this.Cookie.set('loggeado',this.form.value.correo);
         });
         this.router.navigate(['Pag']);
 
@@ -94,8 +94,8 @@ export class RegUsuComponent implements OnInit {
   ComprobarUsu(){
     console.log("Has entrado");
     console.log(this.listaUsuario);
-    console.log(this.form.value.Correo);
-    if(this.listaUsuario.includes(this.form.value.Correo)){
+    console.log(this.form.value.correo);
+    if(this.listaUsuario.includes(this.form.value.correo)){
       return true;
     }
     return false;

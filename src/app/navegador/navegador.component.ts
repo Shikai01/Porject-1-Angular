@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { elementAt } from 'rxjs';
 import {CarrerasUniversitarias } from '../Servicio_Usuario/Universidades';
 
 @Component({
