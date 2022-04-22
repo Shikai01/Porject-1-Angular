@@ -84,8 +84,8 @@ export class RegUsuComponent implements OnInit {
     console.log("cargado usuarios")
     this.firebase.collection('usuarios').snapshotChanges().subscribe(doc =>{
       doc.forEach((element:any)=>{
-        let cosa = element.payload._delegate.doc._document.data.value.mapValue.fields
-        this.listaUsuario.push(cosa.correo.stringValue);
+        let cosa = element.payload._delegate.doc._document.data.value.mapValue.fields.correo.stringValue
+        this.listaUsuario.push(cosa);
       })
     })
 
@@ -95,10 +95,10 @@ export class RegUsuComponent implements OnInit {
     console.log("Has entrado");
     console.log(this.listaUsuario);
     console.log(this.form.value.correo);
-    if(this.listaUsuario.includes(this.form.value.correo)){
-      return true;
+    if(this.listaUsuario.indexOf(this.form.value.correo)== -1){
+      return false;
     }
-    return false;
+    return true;
   }
   
 
