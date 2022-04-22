@@ -42,6 +42,7 @@
             </div>
     
             <div *ngIf="m_pop2" class="pop">
+                <p (click)="cerrarpop2()" type="button" class="cerrar">X</p>
                 <form class="formulario1" [formGroup]="form" (ngSubmit)="crearProf()">
                     <div class="row mt-2">
                         <div class="input-group input-group-lg mb3">

@@ -133,4 +133,8 @@ export class EProfComponentComponent implements OnInit {
     this.router.navigate(['EMat',this.uni,this.carr,prof]);
   }
 
+  cerrarpop2(){
+    this.m_pop2=false;
+  }
+
 }

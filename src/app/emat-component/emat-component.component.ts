@@ -128,6 +128,9 @@ export class EMatComponentComponent implements OnInit {
     this.router.navigate(['EProf',this.uni,this.carr,prof]);
   }
 
+  cerrarpop2(){
+    this.m_pop2=false;
+  }
 }
 
 
