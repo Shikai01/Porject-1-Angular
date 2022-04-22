@@ -46,6 +46,8 @@ export class VisitarPaginaComponent implements OnInit {
         let cosa=element.payload._delegate.doc._document.data.value.mapValue.fields.Nombre.stringValue
         if( this.listaProf.indexOf(cosa)==-1){
           this.listaProf.push(cosa);
+        }
+        if(this.listaMaterias.indexOf(element.payload._delegate.doc._document.data.value.mapValue.fields.Materia.stringValue)==-1){
           this.listaMaterias.push(element.payload._delegate.doc._document.data.value.mapValue.fields.Materia.stringValue);
         }
         
