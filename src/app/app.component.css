@@ -8,3 +8,11 @@
     margin-left:40px;
     margin-top: 20px;
 }
+
+.pop{
+    z-index: 100;
+}
+
+.pop2{
+    z-index: 100;
+}
